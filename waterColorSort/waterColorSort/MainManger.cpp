@@ -1,7 +1,7 @@
 #include "MainManager.h"
 
 void MainManager::initialize() {
-	playing = true;
+	isPlaying = true;
 	mxMoves = 3;
 	moves = mxMoves;
 	
@@ -19,6 +19,10 @@ void MainManager::initialize() {
 
 	bottles[rand1].values[2] = liquid[rand() % 4];
 	bottles[rand2].values[2] = liquid[rand() % 4];
+
+	points = 0;
+
+	scene = PLAYING;
 
 }
 

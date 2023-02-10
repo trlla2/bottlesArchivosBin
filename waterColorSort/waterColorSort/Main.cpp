@@ -62,3 +62,53 @@ void LlenarBottellas(MainManager manager) {
 	manager.bottles[resp].values[kk] = ' ';
 	
 }
+//aaaaaa
+void comprobacion(MainManager manager) {
+	for (int i = 0; i < NUM_BOTTLES; i++) {
+		//llenar ampolla
+		if (manager.bottles[i].values[3] != ' ')
+			manager.points += 30;
+		//anpolla buida
+		if (manager.bottles[i].values[1] != ' ')
+			manager.points += 50;
+		//move left
+		if (manager.bottles[i].values[3] != ' ')
+			manager.points += 3;
+
+
+	}
+}
+void Menu(MainManager manager) {
+	int respuesta;
+	bool respCorrecta;
+	std::cout << "-----Water Color Sort-----" << std::endl;
+	std::cout << "1 Nueva Partida" << std::endl;
+	std::cout << "2 Scores" << std::endl;
+	std::cout << "3 Salir" << std::endl;
+	std::cout << "que quieres ahcer?" << std::endl;
+	do {
+		std::cin >> respuesta;
+		if (respuesta >= 1 && respuesta <= 3) {
+			respCorrecta = true;
+		}
+		else {
+			respCorrecta = false;
+		}
+
+	} while (respCorrecta);
+	switch (respuesta) {
+		case 1:
+			manager.scene = PLAYING;
+			break;
+		case 2:
+			//score things
+			break;
+		case 3:
+			manager.isPlaying = false;
+	}
+
+	system("cls");
+}
+void Scores(MainManager manager) {
+	std::cout << "-----SCORES-----" << std::endl;
+}

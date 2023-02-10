@@ -11,9 +11,11 @@ enum currentScenes {MENU, PLAYING};
 struct MainManager{
 	Bottles bottles[NUM_BOTTLES];
 
-	bool playing;
+	currentScenes scene;
+	bool isPlaying;
 	int mxMoves;
 	int moves;
+	int points;
 	void initialize();
 	
 };
