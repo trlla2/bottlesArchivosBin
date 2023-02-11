@@ -7,7 +7,20 @@ int main() {
 	MainManager manager;
 	manager.initialize();
 	
-	PrintBottles(manager);
+	do {
+		switch (manager.scene) {
+		case MENU:
+			
+			break;
+		case PLAYING:
+			PrintBottles(manager);
+			
+			
+			break;
+		default:
+			break;
+		}
+	} while (manager.isPlaying);
 }
 
 void PrintBottles(MainManager manager) {
@@ -34,6 +47,7 @@ void PrintBottles(MainManager manager) {
 		std::cout << " " << j + 1 << " ";
 	}
 	std::cout << std::endl;
+
 }
 void LlenarBottellas(MainManager manager) {
 	int resp;
@@ -64,18 +78,31 @@ void LlenarBottellas(MainManager manager) {
 }
 //aaaaaa
 void comprobacion(MainManager manager) {
+	bool Pfinish = true;
 	for (int i = 0; i < NUM_BOTTLES; i++) {
-		//llenar ampolla
-		if (manager.bottles[i].values[3] != ' ')
-			manager.points += 30;
-		//anpolla buida
-		if (manager.bottles[i].values[1] != ' ')
-			manager.points += 50;
-		//move left
-		if (manager.bottles[i].values[3] != ' ')
-			manager.points += 3;
+		if (manager.bottles[i].values[1] != manager.bottles[i].values[2] || manager.bottles[i].values[2] != ' ')
+			Pfinish = false;
 
-
+		if (manager.bottles[i].values[1] != manager.bottles[i].values[3] || manager.bottles[i].values[3] != ' ')
+			Pfinish = false;
+	}
+	if (Pfinish) {
+		std::cout << "Ya has acabado la partida" << std::endl;
+		std::string(name);
+		for (int i = 0; i < NUM_BOTTLES; i++) {
+			//llenar ampolla
+			if (manager.bottles[i].values[3] != ' ')
+				manager.points += 30;
+			//anpolla buida
+			if (manager.bottles[i].values[1] != ' ')
+				manager.points += 50;
+			//move left
+			if (manager.bottles[i].values[3] != ' ')
+				manager.points += 3;
+		}
+		std::cout << "Has echo " << manager.points << " puntos" << std::endl;
+		std::cout << "A que nombre quieres guardar la puntuacion??" << std::endl;
+		std::cin >> name;
 	}
 }
 void Menu(MainManager manager) {
@@ -111,4 +138,5 @@ void Menu(MainManager manager) {
 }
 void Scores(MainManager manager) {
 	std::cout << "-----SCORES-----" << std::endl;
+
 }
