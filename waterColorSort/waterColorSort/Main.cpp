@@ -85,10 +85,10 @@ void Comprobacion(MainManager manager) {
 	bool Pfinish = true;
 	
 	for (int i = 0; i < NUM_BOTTLES; i++) {
-		if (manager.bottles[i].values[1] != manager.bottles[i].values[2] || manager.bottles[i].values[2] != ' ')
+		if (manager.bottles[i].values[0] != manager.bottles[i].values[1] || manager.bottles[i].values[1] != ' ')
 			Pfinish = false;
 
-		if (manager.bottles[i].values[1] != manager.bottles[i].values[3] || manager.bottles[i].values[3] != ' ')
+		if (manager.bottles[i].values[0] != manager.bottles[i].values[2] || manager.bottles[i].values[2] != ' ')
 			Pfinish = false;
 		if (manager.moves <= 0)
 			Pfinish = true;
