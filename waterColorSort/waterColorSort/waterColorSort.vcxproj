@@ -127,7 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bottle.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainManger.cpp" />
     <ClCompile Include="Random.cpp" />

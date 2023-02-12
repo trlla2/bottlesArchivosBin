@@ -3,6 +3,8 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
+#include <time.h>
+
 
 
 
@@ -13,7 +15,6 @@ struct MainManager{
 
 	currentScenes scene;
 	bool isPlaying;
-	int mxMoves;
 	int moves;
 	int points;
 	void initialize();

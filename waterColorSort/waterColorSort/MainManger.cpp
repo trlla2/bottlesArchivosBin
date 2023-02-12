@@ -2,8 +2,8 @@
 
 void MainManager::initialize() {
 	isPlaying = true;
-	mxMoves = 3;
-	moves = mxMoves;
+	
+	moves = 10;
 	
 	char liquid[] = { 'X' ,'O','S','#' };
 	for (int i = 0; i < NUM_BOTTLES; i++) {
@@ -22,7 +22,7 @@ void MainManager::initialize() {
 
 	points = 0;
 
-	scene = PLAYING;
+	scene = MENU;
 
 }
 
